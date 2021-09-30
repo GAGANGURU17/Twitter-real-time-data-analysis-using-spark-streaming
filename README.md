@@ -30,10 +30,10 @@ $ bin/zookeeper-server-start.sh config/zookeeper.properties
 $ bin/kafka-server-start.sh config/server.properties
 # Create a topic named twitterstream in kafka:
 $ bin/kafka-topics.sh --create --zookeeper --partitions 1 --topic twitterstream localhost:2181 --replication-factor 1
-## Using the Twitter Streaming API In order to download the tweets from twitter streaming API and push them to kafka queue, I have created a python script app.py. The script will need your twitter authentication tokens (keys).
+#### Using the Twitter Streaming API In order to download the tweets from twitter streaming API and push them to kafka queue, I have created a python script app.py. The script will need your twitter authentication tokens (keys).
 Once you have your authentication tokens, create or update the twitter-app-credentials.txt with these credentials.
 
-## After updating the text file with your twitter keys, you can start downloading tweets from the twitter stream API and push them to the twitterstream topic in Kafka. Do this by running the script as follows:
+After updating the text file with your twitter keys, you can start downloading tweets from the twitter stream API and push them to the twitterstream topic in Kafka. Do this by running the script as follows:
 
 $ python app.py
 Note: This program should be kept running for collecting tweets.
