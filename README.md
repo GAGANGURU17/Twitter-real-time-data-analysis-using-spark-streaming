@@ -19,16 +19,17 @@ tweepy: interact with the Twitter Streaming API and create a live data streaming
 pyspark: preprocess the twitter data (Python's Spark library)
 
 # Project Setup
-## Installing Required Python Libraries I have provided a text file containing the required python packages: requirements.txt
+
+### Installing Required Python Libraries I have provided a text file containing the required python packages: requirements.txt
 To install all of these at once, simply run (only missing packages will be installed):
 
 * $ sudo pip install -r requirements.txt
 Installing and Initializing Kafka Download and extract the latest binary from https://kafka.apache.org/downloads.html
-## Start zookeeper service:
+### Start zookeeper service:
 * $ bin/zookeeper-server-start.sh config/zookeeper.properties
-## Start kafka service:
+### Start kafka service:
 * $ bin/kafka-server-start.sh config/server.properties
-## Create a topic named twitterstream in kafka:
+### Create a topic named twitterstream in kafka:
 * $ bin/kafka-topics.sh --create --zookeeper --partitions 1 --topic twitterstream localhost:2181 --replication-factor 1
 #### Using the Twitter Streaming API In order to download the tweets from twitter streaming API and push them to kafka queue, I have created a python script app.py. The script will need your twitter authentication tokens (keys).
 Once you have your authentication tokens, create or update the twitter-app-credentials.txt with these credentials.
