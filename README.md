@@ -36,8 +36,8 @@ Once you have your authentication tokens, create or update the twitter-app-crede
 
 After updating the text file with your twitter keys, you can start downloading tweets from the twitter stream API and push them to the twitterstream topic in Kafka. Do this by running the script as follows:
 
-$ python app.py
-Note: This program should be kept running for collecting tweets.
+* $ python app.py
+#### Note: This program should be kept running for collecting tweets.
 
 ### To check if the data is landing in Kafka:
 * $ bin/kafka-console-consumer.sh --zookeeper localhost:2181 --topic twitterstream --from-beginning
