@@ -22,14 +22,14 @@ pyspark: preprocess the twitter data (Python's Spark library)
 ## Installing Required Python Libraries I have provided a text file containing the required python packages: requirements.txt
 To install all of these at once, simply run (only missing packages will be installed):
 
-$ sudo pip install -r requirements.txt
+* $ sudo pip install -r requirements.txt
 Installing and Initializing Kafka Download and extract the latest binary from https://kafka.apache.org/downloads.html
-# Start zookeeper service:
-$ bin/zookeeper-server-start.sh config/zookeeper.properties
-# Start kafka service:
-$ bin/kafka-server-start.sh config/server.properties
-# Create a topic named twitterstream in kafka:
-$ bin/kafka-topics.sh --create --zookeeper --partitions 1 --topic twitterstream localhost:2181 --replication-factor 1
+## Start zookeeper service:
+* $ bin/zookeeper-server-start.sh config/zookeeper.properties
+## Start kafka service:
+* $ bin/kafka-server-start.sh config/server.properties
+## Create a topic named twitterstream in kafka:
+* $ bin/kafka-topics.sh --create --zookeeper --partitions 1 --topic twitterstream localhost:2181 --replication-factor 1
 #### Using the Twitter Streaming API In order to download the tweets from twitter streaming API and push them to kafka queue, I have created a python script app.py. The script will need your twitter authentication tokens (keys).
 Once you have your authentication tokens, create or update the twitter-app-credentials.txt with these credentials.
 
@@ -39,6 +39,6 @@ $ python app.py
 Note: This program should be kept running for collecting tweets.
 
 ### To check if the data is landing in Kafka:
-& $ bin/kafka-console-consumer.sh --zookeeper localhost:2181 --topic twitterstream --from-beginning
+* $ bin/kafka-console-consumer.sh --zookeeper localhost:2181 --topic twitterstream --from-beginning
 ### Running the Stream Analysis Program:
 * $ SPARK_HOME/bin/spark-submit --packages org.apache.spark:spark-streaming-kafka_2.10:1.5.1 twitterStream.py
