@@ -41,4 +41,4 @@ Note: This program should be kept running for collecting tweets.
 # To check if the data is landing in Kafka:
 $ bin/kafka-console-consumer.sh --zookeeper localhost:2181 --topic twitterstream --from-beginning
 # Running the Stream Analysis Program:
-*$ SPARK_HOME/bin/spark-submit --packages org.apache.spark:spark-streaming-kafka_2.10:1.5.1 twitterStream.py
+* $ SPARK_HOME/bin/spark-submit --packages org.apache.spark:spark-streaming-kafka_2.10:1.5.1 twitterStream.py
